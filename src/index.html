@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art of 3looloo</title>
+    <link rel="stylesheet" href="./css/output.css?v=42" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22white%22>M</text></svg>"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="bg-[#050505] text-zinc-100 font-sans-clean overflow-x-hidden selection:bg-white/20"
+  >
+    <!-- Background Grid (Fixed) -->
+    <div
+      class="fixed top-0 left-0 w-full h-full pointer-events-none z-9990"
+    ></div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 py-8 px-8 md:px-12 flex items-center justify-between bg-black/80 backdrop-blur-sm z-9999"
+    >
+      <!-- Brand -->
+      <a
+        href="#"
+        class="text-xs tracking-[0.2em] font-cinzel uppercase text-white/90 hover:text-white transition"
+      >
+        Logo
+      </a>
+
+      <!-- Menu Links (Desktop) -->
+      <div
+        class="hidden md:flex items-center gap-12 text-[10px] tracking-[0.15em] font-medium uppercase text-zinc-400 z-50"
+      >
+        <a
+          href="#"
+          class="text-white relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-full after:h-px after:bg-blue-600"
+          >Home</a
+        >
+        <a href="#collection" class="hover:text-white transition">Collection</a>
+        <a href="#" class="hover:text-white transition">Artists</a>
+        <a href="#" class="hover:text-white transition">Events</a>
+        <a href="#" class="hover:text-white transition">Visit</a>
+      </div>
+
+      <!-- Menu Toggle (Dots <-> X) -->
+      <div
+        id="menuToggle"
+        class="text-white cursor-pointer group pointer-events-auto w-8 h-8 grid place-items-center relative z-10000"
+      >
+        <!-- Dots Icon -->
+        <div
+          id="menuIconDots"
+          class="grid grid-cols-3 grid-rows-3 gap-1"
+          aria-hidden="true"
+        >
+          <span class="dot"></span><span class="dot"></span
+          ><span class="dot"></span> <span class="dot"></span
+          ><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span
+          ><span class="dot"></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Menu Backdrop Overlay -->
+    <div
+      id="sideMenuBackdrop"
+      class="fixed inset-0 bg-black/60 backdrop-blur-md z-9980 opacity-0 pointer-events-none transition-opacity duration-500"
+    ></div>
+
+    <!-- Side Menu Panel -->
+    <div
+      id="mobileMenu"
+      class="fixed top-0 right-0 h-[calc(100vh-104px)] mt-26 w-[90vw] md:w-[400px] bg-gradient-to-br from-[#0d0d0d] to-[#050505] z-9990 shadow-2xl overflow-y-auto translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
+    >
+      <!-- Decorative Left Border -->
+      <div
+        class="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-white/30 to-transparent"
+      ></div>
+
+      <!-- Menu Links -->
+      <nav class="px-8 pt-20 pb-8 z-50">
+        <a
+          href="#"
+          class="menu-link block py-4 px-4 mb-2 text-white hover:text-white hover:bg-white/5 font-cinzel uppercase text-lg tracking-[0.15em] transition-all duration-300 rounded opacity-100 z-50"
+          >Home</a
+        >
+        <a
+          href="#collection"
+          class="menu-link block py-4 px-4 mb-2 text-white hover:text-white hover:bg-white/5 font-cinzel uppercase text-lg tracking-[0.15em] transition-all duration-300 rounded opacity-100 z-50"
+          >Collection</a
+        >
+        <a
+          href="#"
+          class="menu-link block py-4 px-4 mb-2 text-white hover:text-white hover:bg-white/5 font-cinzel uppercase text-lg tracking-[0.15em] transition-all duration-300 rounded opacity-100 z-50"
+          >Artists</a
+        >
+        <a
+          href="#"
+          class="menu-link block py-4 px-4 mb-2 text-white hover:text-white hover:bg-white/5 font-cinzel uppercase text-lg tracking-[0.15em] transition-all duration-300 rounded opacity-100 z-50"
+          >Events</a
+        >
+        <a
+          href="#"
+          class="menu-link block py-4 px-4 mb-2 text-white hover:text-white hover:bg-white/5 font-cinzel uppercase text-lg tracking-[0.15em] transition-all duration-300 rounded opacity-100 z-50"
+          >Visit</a
+        >
+      </nav>
+
+      <!-- Footer -->
+      <div
+        class="absolute bottom-0 left-0 right-0 border-t border-white/10 px-8 py-6 z-50"
+      >
+        <p class="text-xs text-white/30 tracking-wider z-50">
+          © 2026 Creative Studio
+        </p>
+      </div>
+    </div>
+
+    <main class="relative z-10">
+      <!-- HERO SECTION -->
+      <section
+        id="heroCarousel"
+        class="relative h-screen w-full overflow-hidden bg-[#050505] flex items-center justify-center perspective-1000"
+      >
+        <!-- Background Ambient Glow -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-blue-900/20 rounded-full blur-[120px]"
+          ></div>
+          <div
+            class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,transparent_0%,#050505_100%)]"
+          ></div>
+        </div>
+
+        <!-- Cinematic Dust Motes Canvas -->
+        <canvas
+          id="dustCanvas"
+          class="absolute inset-0 z-1 pointer-events-none opacity-40"
+        ></canvas>
+
+        <!-- Cinematic Lens Flare Container -->
+        <div
+          id="lensFlareContainer"
+          class="absolute inset-0 z-3 pointer-events-none overflow-hidden opacity-0"
+        >
+          <!-- Main Flare -->
+          <div
+            class="flare-main absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white rounded-full blur-3xl opacity-20"
+          ></div>
+          <!-- Anamorphic Streak -->
+          <div
+            class="flare-streak absolute top-1/2 left-0 w-full h-px bg-blue-400/30 blur-[2px] shadow-[0_0_15px_blue]"
+          ></div>
+          <!-- Ghosts -->
+          <div
+            class="flare-ghost ghost-1 absolute w-24 h-24 rounded-full bg-blue-500/10 blur-xl"
+          ></div>
+          <div
+            class="flare-ghost ghost-2 absolute w-16 h-16 rounded-full bg-gold-500/10 blur-lg"
+          ></div>
+          <div
+            class="flare-ghost ghost-3 absolute w-48 h-48 rounded-full bg-purple-500/5 blur-2xl"
+          ></div>
+        </div>
+
+        <!-- 3D Ring Container -->
+        <div
+          id="carouselRing"
+          class="relative w-75 md:w-125 h-75 md:h-150 transform-style-3d z-10"
+        >
+          <!-- Cards injected by JS -->
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 text-white/50"
+        >
+          <span class="text-[10px] uppercase tracking-[0.2em]"
+            >Drag Or Hover</span
+          >
+        </div>
+        <!-- Scrolling Credits Marquee -->
+        <div
+          class="absolute bottom-0 left-0 w-full overflow-hidden py-6 border-t border-white/5 bg-black/20 backdrop-blur-sm z-20"
+        >
+          <div
+            id="marqueeTrack"
+            class="flex whitespace-nowrap gap-12 text-white/40 font-cinzel text-xs tracking-[0.3em] uppercase"
+          >
+            <span
+              >Production // Cinematography // Behind the Scenes //
+              Post-Production // Visual Storytelling // Creative Direction //
+              Multi-Camera // 8K RAW // Final Cut</span
+            >
+            <span
+              >Production // Cinematography // Behind the Scenes //
+              Post-Production // Visual Storytelling // Creative Direction //
+              Multi-Camera // 8K RAW // Final Cut</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- COLLECTION / MASONRY SECTION -->
+      <section
+        id="collection"
+        class="relative min-h-screen bg-[#050505] pt-24 pb-24 z-20"
+      >
+        <div
+          class="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-[#050505] to-transparent -translate-y-full z-20"
+        ></div>
+
+        <div class="mx-auto max-w-7xl px-6 md:px-12">
+          <!-- Head -->
+          <div
+            class="mb-12 flex flex-col md:flex-row items-end justify-between gap-6 border-b border-white/10 pb-6"
+          >
+            <div>
+              <p
+                class="text-[10px] uppercase tracking-[0.3em] text-blue-500 font-bold mb-2"
+              >
+                Selected Works
+              </p>
+              <h2 class="text-3xl md:text-6xl font-serif-display text-zinc-100">
+                The Collection
+              </h2>
+            </div>
+
+            <!-- Filters -->
+            <div id="filters" class="flex flex-wrap gap-2"></div>
+          </div>
+
+          <!-- Masonry Container -->
+          <div
+            id="masonryGrid"
+            class="columns-1 gap-8 space-y-8 md:columns-2 lg:columns-3"
+          >
+            <!-- Items will be injected here -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Detail Overlay -->
+    <div
+      id="projectOverlay"
+      class="fixed inset-0 z-10000 bg-black/90 opacity-0 pointer-events-none flex items-start md:items-center justify-center backdrop-blur-2xl overflow-y-auto pt-20 pb-10"
+    >
+      <!-- Close Button -->
+      <button
+        id="closeOverlay"
+        class="fixed top-6 right-6 text-white/50 hover:text-white transition z-50 p-2 bg-white/5 rounded-full backdrop-blur-md"
+      >
+        <svg
+          class="w-6 h-6 md:w-8 md:h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Content Container -->
+      <div
+        id="overlayContent"
+        class="relative w-full max-w-5xl flex flex-col md:flex-row gap-8 md:gap-12 px-6 md:px-12"
+      >
+        <!-- Image Side -->
+        <div
+          class="w-full md:w-3/5 aspect-video md:aspect-auto md:h-150 relative rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] opacity-0"
+          id="overlayImgContainer"
+        >
+          <img id="overlayImg" src="" class="w-full h-full object-cover" />
+        </div>
+        <!-- Text Side -->
+        <div
+          class="w-full md:w-2/5 flex flex-col justify-center text-white py-4"
+        >
+          <p
+            id="overlayTag"
+            class="text-blue-500 tracking-[0.2em] text-xs md:text-sm font-bold mb-4 uppercase opacity-0"
+          ></p>
+          <h2
+            id="overlayTitle"
+            class="text-3xl md:text-5xl lg:text-6xl font-serif-display mb-6 leading-tight opacity-0"
+          ></h2>
+          <p
+            id="overlayDesc"
+            class="text-zinc-400 text-sm md:text-base leading-relaxed mb-8 opacity-0 max-w-md"
+          ></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./data/projects.js"></script>
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Global Spotlight Cursor -->
+    <div
+      id="globalSpotlight"
+      class="fixed inset-0 z-10001 pointer-events-none opacity-0 flex items-center justify-center transition-[width,height,background] duration-500 ease-out"
+      style="
+        width: 800px;
+        height: 800px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      "
+    >
+      <div
+        id="spotlightCore"
+        class="absolute inset-0 ring-1 ring-white/10 rounded-full transition-all duration-500"
+        style="
+          background: radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.08) 0%,
+            transparent 60%
+          );
+          filter: blur(80px);
+        "
+      ></div>
+      <span
+        id="spotlightText"
+        class="text-white font-cinzel text-[10px] tracking-[0.3em] uppercase opacity-0 transition-opacity duration-300"
+        >View Card</span
+      >
+    </div>
+
+    <!-- Main Logic -->
+    <script src="./js/main.js?v=41"></script>
+
+    <!-- Film Grain Overlay -->
+    <div id="filmGrain"></div>
+
+    <!-- Organic Light Leaks -->
+    <div id="leak1" class="light-leak"></div>
+    <div id="leak2" class="light-leak"></div>
+
+    <!-- Glitch Overlay Element -->
+    <div
+      id="glitchOverlay"
+      class="fixed inset-0 z-9999 pointer-events-none scanlines"
+    ></div>
+  </body>
+</html>
