@@ -312,9 +312,6 @@
   .mt-26 {
     margin-top: calc(var(--spacing) * 26);
   }
-  .mt-\[104px\] {
-    margin-top: 104px;
-  }
   .mt-auto {
     margin-top: auto;
   }
@@ -393,9 +390,6 @@
   .h-\[70\%\] {
     height: 70%;
   }
-  .h-\[600px\] {
-    height: 600px;
-  }
   .h-\[calc\(100vh-104px\)\] {
     height: calc(100vh - 104px);
   }
@@ -440,9 +434,6 @@
   }
   .w-\[90vw\] {
     width: 90vw;
-  }
-  .w-\[600px\] {
-    width: 600px;
   }
   .w-full {
     width: 100%;
